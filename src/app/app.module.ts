@@ -4,6 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
+import {FirebaseService} from './firebase.service';
 
 import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
@@ -25,16 +26,6 @@ const appRoutes: Routes = [
   }
 ];
 
-const firebase = {
-    apiKey: "AIzaSyDNzYMbUdRigHY0QUp3o5SmFdBjOK2crfY",
-    authDomain: "oleg-personal-portfolio.firebaseapp.com",
-    databaseURL: "https://oleg-personal-portfolio.firebaseio.com",
-    projectId: "oleg-personal-portfolio",
-    storageBucket: "",
-    messagingSenderId: "420176339684"
-};
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,11 +42,11 @@ const firebase = {
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(firebase),
+    AngularFireModule.initializeApp(environment.fireBase),
     AngularFireDatabaseModule,
     RouterModule.forRoot(appRoutes, { useHash: true })  // .../#/crisis-center/
   ],
-  providers: [],
+  providers: [FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

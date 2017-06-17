@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
+import {FirebaseService} from '../firebase.service';
+import { FirebaseListObservable } from 'angularfire2/database';
 
 
 @Component({
@@ -8,11 +9,13 @@ import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/databa
   styleUrls: ['./main.component.css']
 })
 export class MainComponent implements OnInit {
-  items: FirebaseListObservable<any[]>;
+  personalInfo: FirebaseListObservable<any[]>;
 
-  constructor(db: AngularFireDatabase) {
-    this.items = db.list('/portfolio');
+  constructor(public fs: FirebaseService) {
+    this.personalInfo = this.fs.getPersonalInfo();
+    console.log(this.personalInfo);
   }
+
 
   ngOnInit() {
   }
