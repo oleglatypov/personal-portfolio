@@ -16,7 +16,6 @@ export class MainComponent implements OnInit {
     console.log(this.personalInfo);
   }
 
-
   ngOnInit() {
   }
 
