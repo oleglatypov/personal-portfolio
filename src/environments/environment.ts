@@ -14,6 +14,3 @@ export const environment = {
     messagingSenderId: "420176339684"
   }
 };
-
-
-
