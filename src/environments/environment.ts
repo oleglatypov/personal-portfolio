@@ -6,12 +6,12 @@
 export const environment = {
   production: false,
   fireBase: {
-    apiKey: "",
-    authDomain: "",
-    databaseURL: "",
-    projectId: "",
+    apiKey: "AIzaSyDNzYMbUdRigHY0QUp3o5SmFdBjOK2crfY",
+    authDomain: "oleg-personal-portfolio.firebaseapp.com",
+    databaseURL: "https://oleg-personal-portfolio.firebaseio.com",
+    projectId: "oleg-personal-portfolio",
     storageBucket: "",
-    messagingSenderId: ""
+    messagingSenderId: "420176339684"
   }
 };
 
