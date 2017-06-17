@@ -1,10 +1,16 @@
-
 <!-- Loader -->
 <div id="page-loader" class="bg-white"></div>
+
 <!-- Loader / End -->
 <app-nav></app-nav>
+
 <!-- Content -->
 <div id="content" class="bg-white">
+  <ul>
+    <li class="text" *ngFor="let item of items | async">
+      {{item}}
+    </li>
+  </ul>
   <!-- Section - Home -->
   <app-home-head></app-home-head>
   <!-- Section - Home / End -->
@@ -28,6 +34,7 @@
   <!-- Section - Contact -->
   <app-contact></app-contact>
   <!-- Section - Contact / End -->
+
 </div>
 <!-- Content / End -->
 
